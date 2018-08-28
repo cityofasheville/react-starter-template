@@ -1,5 +1,4 @@
 .Navbar-nav {
-    float: right;
     overflow: hidden;
 }
 
@@ -31,6 +30,15 @@
     display: none;
 }
 
+#skip a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 @media screen and (max-width: 600px) {
     .Navbar-nav a {display: none;}
     .Navbar-nav a.icon {
@@ -45,7 +53,7 @@
         position: absolute;
         background-color: #f6fcff;
         top: 0;
-        right: 0;
+        right: 80px;
     }
     .Navbar-nav.responsive .icon {
         position: absolute;
@@ -57,12 +65,10 @@
         margin-top: 42px;
     }
     .Navbar-nav.responsive a {
-        border-bottom: 1px solid #c3ebff;
-        border-left: 1px solid #c3ebff;
+        border: 1px solid #c3ebff;
     }
     .Navbar-nav.responsive a:nth-last-of-type(1) {
-        border-bottom: none;
-        border-left: none;
+        border: none;
     }
     .Navbar-nav.responsive a {
         float: none;

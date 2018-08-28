@@ -43,16 +43,11 @@ h1, h2, body {
   font-weight: lighter;
 }
 
-#skip a {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+.App-nav {
+  display: flex;
 }
 
-@media (max-width: 365px) {
+@media (max-width: 415px) {
   .App-logo {
     width: 60px;
     height: 45px;
@@ -62,3 +57,4 @@ h1, h2, body {
     font-size: 1.5em;
   }
 }
+

@@ -1,0 +1,48 @@
+.LangSwitcher-dropdown .dropbtn {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 80px;
+    height: 100%;
+}
+
+.LangSwitcher-dropdown .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.LangSwitcher-dropdown .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.LangSwitcher-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.LangSwitcher-dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.LangSwitcher-dropdown .dropdown-content a:hover {background-color: #ddd;}
+
+.LangSwitcher-dropdown .show {display: block;}
+
+@media screen and (max-width: 600px) {
+    .LangSwitcher-dropdown .dropbtn {
+        background-color: #3498DB;
+        color: white;
+        border: none;
+        cursor: pointer;
+        min-width: 60px;
+        height: 100%;
+    }
+}
