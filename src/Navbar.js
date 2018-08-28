@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Icon from './Icon';
+import {
+  IM_MENU3,
+  IM_SEARCH,
+} from './iconConstants';
 import './Navbar.css';
 //import Icon from '../shared/Icon';
 //import { IM_SEARCH } from '../shared/iconConstants';
@@ -11,42 +16,42 @@ export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navbarCollapse: 'collapse',
-      navbarDisplay: 'block',
+      responsive: false,
     };
 
-    this.toggleNavbarCollapse = this.toggleNavbarCollapse.bind(this);
+    this.toggleResponsive = this.toggleResponsive.bind(this);
   }
 
-  toggleNavbarCollapse() {
-    if (this.state.navbarCollapse === 'collapse') {
-      this.setState({ navbarCollapse: 'collapsed' });
-    } else {
-      this.setState({ navbarCollapse: 'collapse' });
-    }
+  toggleResponsive() {
+    this.setState({ responsive: !this.state.responsive })
   }
 
   render() {
     return (
-      <div style={{ display: this.state.navbarDisplay }}>
-        <nav className="Navbar-nav">
+      // <div style={{ display: this.state.navbarDisplay }}>
+        <nav className={`Navbar-nav ${this.state.responsive ? 'responsive' : ''}`}>
           {
             this.props.items.map((item) =>
               <Link
                 to={item.href}
                 className={item.active ? "active" : ""}
-              >{item.text}
+                alt={item.text}
+              >{item.icon ? 
+                <Icon path={item.icon} size={24} />
+                :
+                item.text}
               </Link>
             )
           }
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            BARS{/* <i class="fa fa-bars"></i> */}
+          <a href="javascript:void(0);" className="icon" onClick={this.toggleResponsive}>
+            <Icon path={IM_MENU3} size={32} />{/* <i class="fa fa-bars"></i> */}
           </a>
-                {/* {(window.location.href.indexOf('localhost') > -1 || window.location.href.indexOf('dev-simplicity') > -1) &&
+                {/*
+                  <AuthControl />
                   <LangSwitcher />
-                } */}
+                */}
         </nav>
-      </div>
+      // </div>
     );
   }
 }
@@ -55,21 +60,21 @@ const linkShape = {
   href: PropTypes.string,
   active: PropTypes.bool,
   text: PropTypes.string,
+  iconPath: PropTypes.string,
 }
 
 Navbar.propTypes  = {
     appTitle: PropTypes.string,
-    showAuthControl: PropTypes.bool,
-    showLangSwitch: PropTypes.bool,
-    showSearch: PropTypes.bool,
+    authControl: PropTypes.bool,
+    langSwitch: PropTypes.bool,
     items: PropTypes.arrayOf(PropTypes.shape(linkShape)),
 }
 
 Navbar.defaultProps = {
     appTitle: 'A react app',
-    showAuthControl: true,
-    showLangSwitcher: true,
-    showSearch: true,
+    authControl: true,
+    langSwitcher: true,
+    search: true,
     items: [
       {
         href: '/',
@@ -80,6 +85,17 @@ Navbar.defaultProps = {
         href: '/',
         active: false,
         text: 'hello',
+      },
+      {
+        href: '/',
+        active: false,
+        text: 'another item',
+      },
+      {
+        href: '/',
+        active: false,
+        text: 'search',
+        icon: IM_SEARCH,
       }
     ],
 }

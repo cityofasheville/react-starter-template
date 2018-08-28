@@ -12,15 +12,17 @@ class App extends Component {
         <div className="App">
           {/* <LanguageProvider> */}
             <header className="App-header">
-              <Navbar />
               <Link to="/">
                 <img className="App-logo" src={logo} alt="City of Asheville logo"></img>
-                <h1 className="App-title">{this.props.appTitle}</h1>
-                <p className="App-intro">{this.props.appIntro}</p>
+                <div className="App-title-container">
+                  <h1 className="App-title">{this.props.appTitle}</h1>
+                  <div className="App-intro">{this.props.appIntro}</div>
+                </div>
               </Link>    
               <div id="skip">
                 <a href="#content">Skip to Main Content</a>
               </div>
+              <Navbar />
             </header>
             <div className="container" id="content">
               {this.props.children}

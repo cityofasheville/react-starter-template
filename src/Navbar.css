@@ -5,46 +5,70 @@
 
 .Navbar-nav a {
     float: left;
+    font-weight: lighter;
     display: block;
-    color: #002e5c;
+    color: #004a87;
     text-align: center;
-    padding: 14px 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 30px;
     text-decoration: none;
     font-size: 17px;
+    height: 100%;
 }
 
 .Navbar-nav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #7d8e9c;
+    color: white;
 }
 
 .Navbar-nav .active {
-    background-color: #4CAF50;
+    background-color: #004a87;
     color: white;
 }
   
 .Navbar-nav .icon {
     display: none;
 }
-  
+
 @media screen and (max-width: 600px) {
-    .Navbar-nav a:not(:first-child) {display: none;}
+    .Navbar-nav a {display: none;}
     .Navbar-nav a.icon {
         float: right;
         display: block;
+        margin-top: -10px;
     }
 }
   
 @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
+    .Navbar-nav.responsive {
+        position: absolute;
+        background-color: #f6fcff;
+        top: 0;
+        right: 0;
+    }
+    .Navbar-nav.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
+        padding-bottom: 10px;
     }
-    .topnav.responsive a {
+    .Navbar-nav.responsive a:first-of-type {
+        margin-top: 42px;
+    }
+    .Navbar-nav.responsive a {
+        border-bottom: 1px solid #c3ebff;
+        border-left: 1px solid #c3ebff;
+    }
+    .Navbar-nav.responsive a:nth-last-of-type(1) {
+        border-bottom: none;
+        border-left: none;
+    }
+    .Navbar-nav.responsive a {
         float: none;
         display: block;
         text-align: left;
+        height: 29px;
+        padding-top: 13px;
     }
 }
