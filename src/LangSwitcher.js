@@ -14,6 +14,7 @@ const LangSwitcher = props => (
       className="dropbtn"
     >
       {props.language.label}
+      <i className="arrow-down"></i>
     </button>
     <div id="langSwitcherDropdown" className={`dropdown-content ${props.language.dropdownOpen ? 'show' : ''}`}>
       <a

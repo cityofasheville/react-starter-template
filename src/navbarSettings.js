@@ -3,9 +3,6 @@ import {
 } from './iconConstants';
 
 const navbarSettings = {
-  authControl: true,
-  langSwitcher: true,
-  search: true,
   items: [
     {
       href: '/',

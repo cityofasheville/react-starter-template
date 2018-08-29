@@ -21,7 +21,8 @@ const App = props => (
           </Link>
           <div className="App-nav">
             <Navbar />
-            <LangSwitcher />
+            {appSettings.langSwitcher && <LangSwitcher />
+            }
           </div>
         </header>
         <div className="container" id="content">
