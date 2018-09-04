@@ -1,5 +1,6 @@
 import React from 'react';
 import { withLanguage } from './LanguageContext';
+import langSwitcherSettings from './langSwitcherSettings';
 import './LangSwitcher.css';
 
 const LangSwitcher = props => (
@@ -16,27 +17,22 @@ const LangSwitcher = props => (
       {props.language.label}
       <i className="arrow-down"></i>
     </button>
-    <div id="langSwitcherDropdown" className={`dropdown-content ${props.language.dropdownOpen ? 'show' : ''}`}>
-      <a
-        href="#"
-        onClick={() => props.language.switchLanguage(
-          'English',
-          'English',
-          false)
-        }
-      >
-        English
-      </a>
-      <a
-        href="#"
-        onClick={() => props.language.switchLanguage(
-          'Spanish',
-          'Espa\xF1ol',
-          false)
-        }
-      >
-        {'Espa\xF1ol'}
-      </a>
+    <div
+      id="langSwitcherDropdown"
+      className={`dropdown-content ${props.language.dropdownOpen ? 'show' : ''}`}
+    >
+      {langSwitcherSettings.languages.map(lang => (
+        <a
+          href="#"
+          onClick={() => props.language.switchLanguage(
+            lang.language,
+            lang.label,
+            false)
+          }
+        >
+          {lang.label}
+        </a>
+      ))}
     </div>
   </div>
 );
