@@ -3,6 +3,7 @@ const appSettings = {
     appIntro: 'City of Asheville, NC',
     langSwitcher: true,
     authControl: true,
+    footer: true,
 }
 
 export default appSettings;

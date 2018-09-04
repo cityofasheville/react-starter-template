@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import appSettings from './appSettings';
 import LanguageProvider from './LanguageContext';
 import LangSwitcher from './LangSwitcher';
+import Footer from './Footer';
 import './App.css';
 
 const App = props => (
@@ -28,7 +29,7 @@ const App = props => (
         <div className="container" id="content">
           {props.children}
         </div>
-        {/* <Footer /> */}
+        {appSettings.footer && <Footer />}
         {/* <AuthProviderModal /> */}
       </LanguageProvider>
     </div>
