@@ -18,7 +18,8 @@ export default class Navbar extends React.Component {
     this.toggleResponsive = this.toggleResponsive.bind(this);
   }
 
-  toggleResponsive() {
+  toggleResponsive(e) {
+    e.preventDefault();
     this.setState({ responsive: !this.state.responsive })
   }
 
@@ -44,7 +45,11 @@ export default class Navbar extends React.Component {
                 : item.text}
             </Link>))
         }
-        <a href="javascript:void(0);" className="icon" onClick={this.toggleResponsive}>
+        <a
+          href=""
+          className="icon"
+          onClick={this.toggleResponsive}
+        >
           <Icon path={IM_MENU3} size={32} />
         </a>
       </nav>
