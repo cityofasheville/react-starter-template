@@ -26,7 +26,7 @@ export default class Navbar extends React.Component {
   render() {
     let position = { top: 0, right: 0 };
     if (appSettings.langSwitcher) {
-      position = { top: 0, right: 80 };
+      position = { top: 0, right: 90 };
     }
     return (
       <nav className={`Navbar-nav ${this.state.responsive ? 'responsive' : ''}`} style={position}>

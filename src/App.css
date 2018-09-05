@@ -21,6 +21,11 @@ h1, h2, body {
 
 .App-header a {
   text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.App-header a:focus {
+  border: 1px solid blue;
 }
 
 .App-title-container {
@@ -35,6 +40,10 @@ h1, h2, body {
   font-weight: lighter;
   color: #4077a5;
   margin: 0px;
+}
+
+.App-title:focus {
+  border: 1px solid blue;
 }
 
 .App-intro {
