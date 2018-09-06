@@ -7,6 +7,7 @@ import {
 import appSettings from './appSettings';
 import navbarSettings from './navbarSettings';
 import LangSwitcher from './LangSwitcher';
+import AuthControl from './AuthControl';
 import './Navbar.css';
 
 export default class Navbar extends React.Component {
@@ -71,12 +72,14 @@ export default class Navbar extends React.Component {
               </nav>
             )
           }
+          {appSettings.authControl && <AuthControl />}
           {appSettings.langSwitcher && <LangSwitcher />}
         </div>
       );
     }
     return (
       <div className="Navbar-container narrow">
+        {appSettings.authControl && <AuthControl />}
         {appSettings.langSwitcher && <LangSwitcher />}
         {navbarSettings.items.length > 0
           && (

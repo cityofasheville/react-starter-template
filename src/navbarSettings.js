@@ -1,19 +1,9 @@
 const navbarSettings = {
   items: [
     {
-      href: '/',
-      active: true,
-      text: 'test',
-    },
-    {
-      href: '/',
+      href: '/about',
       active: false,
-      text: 'another item',
-    },
-    {
-      href: '/',
-      active: false,
-      text: 'testing',
+      text: 'About',
     },
   ],
 };
