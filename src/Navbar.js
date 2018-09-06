@@ -69,24 +69,23 @@ export default class Navbar extends React.Component {
                         : item.text}
                     </Link>))
                 }
+                {appSettings.authControl && <AuthControl />}
               </nav>
             )
           }
-          {appSettings.authControl && <AuthControl />}
           {appSettings.langSwitcher && <LangSwitcher />}
         </div>
       );
     }
     return (
       <div className="Navbar-container narrow">
-        {appSettings.authControl && <AuthControl />}
         {appSettings.langSwitcher && <LangSwitcher />}
         {navbarSettings.items.length > 0
           && (
             <nav
-              className={`Navbar-nav hamburger ${this.state.open ? 'open' : ''}`}
-              style={position}
-              aria-label="main-menu"
+            className={`Navbar-nav hamburger ${this.state.open ? 'open' : ''}`}
+            style={position}
+            aria-label="main-menu"
             >
               <button
                 className="dropdown-toggle"
@@ -96,7 +95,7 @@ export default class Navbar extends React.Component {
                 aria-controls="menu"
                 aria-label="Navigation"
                 onClick={this.toggleOpen}
-              >
+                >
                 <Icon path={IM_MENU3} size={32} />
               </button>
               <ul className="dropdown-menu" id="menu" tabIndex="-1">
@@ -107,13 +106,14 @@ export default class Navbar extends React.Component {
                         to={item.href}
                         className={item.active ? 'active' : ''}
                         alt={item.text}
-                      >
+                        >
                         {item.icon ? <Icon path={item.icon} size={24} />
                           : item.text}
                       </Link>
                     </li>
                   ))
                 }
+                {appSettings.authControl && <li><AuthControl /></li>}
               </ul>
             </nav>
           )}
