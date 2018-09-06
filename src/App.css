@@ -38,7 +38,7 @@ h1, h2, body {
 .App-title {
   font-size: 2em;
   font-weight: lighter;
-  color: #4077a5;
+  color: #325d81;
   margin: 0px;
 }
 
@@ -48,13 +48,8 @@ h1, h2, body {
 
 .App-intro {
   font-size: 1em;
-  color: #4077a5;
+  color: #325d81;
   font-weight: lighter;
-}
-
-.App-nav {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 @media (max-width: 415px) {

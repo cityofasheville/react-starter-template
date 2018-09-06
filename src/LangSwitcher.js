@@ -21,37 +21,6 @@ const LangSwitcher = props => (
           <option key={lang.language} value={`${lang.language}:${lang.label}`}>{lang.label}</option>
         ))}
     </select>
-
-
-    {/* <button
-      type="button"
-      onClick={() => props.language.switchLanguage(
-        props.language.language,
-        props.language.label,
-        !props.language.dropdownOpen)
-      }
-      className="dropbtn"
-    >
-      {props.language.label}
-      <i className="arrow-down"></i>
-    </button>
-    <div
-      id="langSwitcherDropdown"
-      className={`dropdown-content ${props.language.dropdownOpen ? 'show' : ''}`}
-    >
-      {langSwitcherSettings.languages.map(lang => (
-        <a
-          href="#"
-          onClick={() => props.language.switchLanguage(
-            lang.language,
-            lang.label,
-            false)
-          }
-        >
-          {lang.label}
-        </a>
-      ))}
-    </div> */}
   </div>
 );
 

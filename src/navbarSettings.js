@@ -1,7 +1,3 @@
-import {
-  IM_SEARCH,
-} from './iconConstants';
-
 const navbarSettings = {
   items: [
     {
@@ -17,10 +13,9 @@ const navbarSettings = {
     {
       href: '/',
       active: false,
-      text: 'search',
-      icon: IM_SEARCH,
-    }
+      text: 'testing',
+    },
   ],
-}
+};
 
 export default navbarSettings;

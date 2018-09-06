@@ -9,9 +9,13 @@
 
 .LangSwitcher-dropdown select {
   background-color: #f6fcff;
-  color: #004a87;
+  color: #325d81;
   border: none;
   font-size: 17px;
+}
+
+.LangSwitcher-dropdown select:hover {
+  background: #d6dee4;
 }
 
 .LangSwitcher-dropdown select:focus {
@@ -20,6 +24,5 @@
 
 .LangSwitcher-dropdown option {
     background-color: #f6fcff;
-    color: black;
     height: 100px;
 }
