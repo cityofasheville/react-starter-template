@@ -22,6 +22,14 @@ export default class UserProvider extends React.Component {
     timezone: null,
     updated_at: null,
     website: null,
+    id: null,
+    is_employee: null,
+    position: null,
+    department: null,
+    division: null,
+    supervisor_id: null,
+    supervisor: null,
+    supervisor_email: null,
     login: () => (
       this.setState({loggedIn: true})
     ),
@@ -47,6 +55,14 @@ export default class UserProvider extends React.Component {
         profile: null,
         updated_at: null,
         website: null,
+        id: null,
+        is_employee: null,
+        position: null,
+        department: null,
+        division: null,
+        supervisor_id: null,
+        supervisor: null,
+        supervisor_email: null,
       })
     ),
   }
