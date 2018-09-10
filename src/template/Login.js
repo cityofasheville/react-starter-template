@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import queryString from 'query-string';
-import { Mutation, Query } from 'react-apollo';
+import { Mutation, graphql } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
 import RegisterCode from 'template/RegisterCode';
 import { withUser } from 'template/UserContext';
@@ -57,6 +57,17 @@ class Login extends React.Component {
           }, () => {
             if (this.state.isLoggedIn) {
               this.props.user.login();
+              this.props.user.setUserInfo(this.props.userInfo.user);
+              const priorPath = localStorage.getItem('preLoginPathname');
+              if (priorPath) {
+                if (priorPath !== '/login') {
+                  const priorSearch = localStorage.getItem('preLoginSearch');
+                  if (priorSearch) {
+                    this.props.history.push(`${priorPath}${priorSearch}`);
+                  }
+                  this.props.history.push(priorPath);
+                }
+              }
             }
           });
         }}
@@ -74,26 +85,7 @@ class Login extends React.Component {
                     <Error message={this.state.message} />
                     : this.state.isLoggedIn
                       ? (
-                        <Query
-                          query={GET_USER_INFO}
-                        >
-                          {({ loading, error, data }) => {
-                            if (loading) return <LoadingAnimation />;
-                            if (error) return <Error message={error.message} />;
-                            this.props.user.setUserInfo(data.user);
-                            const priorPath = localStorage.getItem('preLoginPathname');
-                            if (priorPath) {
-                              if (priorPath !== '/login') {
-                                const priorSearch = localStorage.getItem('preLoginSearch');
-                                if (priorSearch) {
-                                  this.props.history.push(`${priorPath}${priorSearch}`);
-                                }
-                                this.props.history.push(priorPath);
-                              }
-                            }
-                            return (<div>You are logged in.</div>);
-                          }}
-                        </Query>
+                        <div>You are logged In</div>
                       )
                       : <LoadingAnimation />
                   }
@@ -107,4 +99,4 @@ class Login extends React.Component {
   }
 };
 
-export default withRouter(withUser(Login));
+export default withRouter(withUser(graphql(GET_USER_INFO, { name: 'userInfo' })(Login)));

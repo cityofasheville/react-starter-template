@@ -10,6 +10,7 @@ const saveLocationThenLogin = (location) => {
 };
 
 const AuthControl = (props) => {
+  console.log(props.user);
   if (props.user.loggedIn) {
     return (
       <a href={config.logoutURL}>Log out</a>
