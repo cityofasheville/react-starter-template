@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from './Icon';
+import config from 'app/config';
+import AuthControl from 'template/AuthControl';
+import LangSwitcher from 'template/LangSwitcher';
 import {
   IM_MENU3,
-} from './iconConstants';
-import appSettings from './appSettings';
-import navbarSettings from './navbarSettings';
-import LangSwitcher from './LangSwitcher';
-import AuthControl from './AuthControl';
-import './Navbar.css';
+} from 'template/assets/iconConstants';
+import Icon from 'template/shared/Icon';
+import 'template/styles/components/Navbar.css';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -41,13 +40,13 @@ export default class Navbar extends React.Component {
 
   render() {
     let position = { top: 0, right: 0 };
-    if (appSettings.langSwitcher) {
+    if (config.langSwitcher) {
       position = { top: 0, right: 90 };
     }
     if (this.state.windowWidth > 600) {
       return (
         <div className="Navbar-container">
-          {navbarSettings.items.length > 0
+          {config.menu_items.length > 0
             && (
               <nav
                 className="Navbar-nav"
@@ -58,7 +57,7 @@ export default class Navbar extends React.Component {
                   <a href="#content">Skip to Main Content</a>
                 </div> */}
                 {
-                  navbarSettings.items.map(item => (
+                  config.menu_items.map(item => (
                     <Link
                       to={item.href}
                       className={item.active ? 'active' : ''}
@@ -69,18 +68,18 @@ export default class Navbar extends React.Component {
                         : item.text}
                     </Link>))
                 }
-                {appSettings.authControl && <AuthControl />}
+                {config.authControl && <AuthControl />}
               </nav>
             )
           }
-          {appSettings.langSwitcher && <LangSwitcher />}
+          {config.langSwitcher && <LangSwitcher />}
         </div>
       );
     }
     return (
       <div className="Navbar-container narrow">
-        {appSettings.langSwitcher && <LangSwitcher />}
-        {navbarSettings.items.length > 0
+        {config.langSwitcher && <LangSwitcher />}
+        {config.menu_items.length > 0
           && (
             <nav
             className={`Navbar-nav hamburger ${this.state.open ? 'open' : ''}`}
@@ -100,7 +99,7 @@ export default class Navbar extends React.Component {
               </button>
               <ul className="dropdown-menu" id="menu" tabIndex="-1">
                 {
-                  navbarSettings.items.map((item, index) => (
+                  config.menu_items.map((item, index) => (
                     <li key={`item.text_${index}`}>
                       <Link
                         to={item.href}
@@ -113,7 +112,7 @@ export default class Navbar extends React.Component {
                     </li>
                   ))
                 }
-                {appSettings.authControl && <li><AuthControl /></li>}
+                {config.authControl && <li><AuthControl /></li>}
               </ul>
             </nav>
           )}

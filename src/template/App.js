@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
-import Navbar from './Navbar';
-import logo from './logo.svg';
-import appSettings from './appSettings';
-import LanguageProvider from './LanguageContext';
-import UserProvider from './UserContext';
-import Footer from './Footer';
-import client from './AppClient';
-import './App.css';
+import { Link } from 'react-router-dom';
+import client from 'app/AppClient';
+import config from 'app/config';
+import mainRoutes from 'app/mainRoutes';
+import Footer from 'template/Footer';
+import LanguageProvider from 'template/LanguageContext';
+import Navbar from 'template/Navbar';
+import UserProvider from 'template/UserContext';
+import logo from 'template/assets/logo.svg';
+import 'template/styles/components/App.css';
 
-const App = props => (
+const App = () => (
   <ApolloProvider client={client}>
     <main>
       <div className="App">
@@ -20,17 +21,17 @@ const App = props => (
               <Link to="/">
                 <img className="App-logo" src={logo} alt="City of Asheville logo"></img>
                 <div className="App-title-container">
-                  <h1 className="App-title">{appSettings.appTitle}</h1>
-                  <div className="App-intro">{appSettings.appIntro}</div>
+                  <h1 className="App-title">{config.appTitle}</h1>
+                  <div className="App-intro">{config.appIntro}</div>
                 </div>
               </Link>
               <Navbar />
             </header>
             <div className="container" id="content">
               {/* {props.children} */}
-              {appSettings.mainRoutes}
+              {mainRoutes}
             </div>
-            {appSettings.footer && <Footer />}
+            {config.footer && <Footer />}
           </UserProvider>
         </LanguageProvider>
       </div>

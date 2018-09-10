@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // https://medium.com/@david.gilbertson/icons-as-react-components-de3e33cb8792
 
-const Icon = props => {
+const Icon = (props) => {
   const styles = {
     svg: {
       display: 'inline-block',
@@ -23,13 +23,14 @@ const Icon = props => {
       preserveAspectRatio='xMidYMid meet'
     >
       <g>
-        {props.path.split(',').map((path, index) =>
+        {props.path.split(',').map((path, index) => (
           <path
             key={['path', index].join('_')}
             style={styles.path}
             d={path}
-          ></path>
-        )}
+          >
+          </path>
+        ))}
       </g>
     </svg>
   );

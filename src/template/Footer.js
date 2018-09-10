@@ -1,8 +1,8 @@
 import React from 'react';
-import Icon from './Icon';
-import { IM_GITHUB } from './iconConstants';
-import footerSettings from './footerSettings';
-import './Footer.css';
+import config from 'app/config';
+import { IM_GITHUB } from 'template/assets/iconConstants';
+import Icon from 'template/shared/Icon';
+import 'template/styles/components/Footer.css';
 
 const Footer = () => (
   <div>
@@ -10,13 +10,13 @@ const Footer = () => (
     <footer className="footer">
       <div className="container">
         <div className="col-sm-12">
-          {footerSettings.hasFeedbackForm
+          {config.hasFeedbackForm
             && (
               <div>
                 We strive for full accessibility. Report issues with our&nbsp;
                 <a
                   className="inText"
-                  href={footerSettings.feedbackURL}
+                  href={config.feedbackURL}
                   target="_blank"
                   title="website feedback form"
                 >
@@ -26,12 +26,12 @@ const Footer = () => (
               </div>
             )
           }
-          {footerSettings.hasGitHubURL
+          {config.hasGitHubURL
             && (
               <div>
                 It&apos;s open source! Fork it on&nbsp;
                 <a
-                  href={footerSettings.gitHubURL}
+                  href={config.gitHubURL}
                   target="_blank"
                 >
                   GitHub
