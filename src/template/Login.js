@@ -38,10 +38,14 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: this.props.user.loggedIn,
       message: 'No message',
       fail: false,
     };
+  }
+
+  async setUserInfo(userInfo) {
+    await this.props.user.setUserInfo(userInfo);
   }
 
   render() {
@@ -49,6 +53,10 @@ class Login extends React.Component {
     return (
       <Mutation
         mutation={REGISTER_CODE}
+        refetchQueries={() => ([{
+          query: GET_USER_INFO,
+        }])}
+        awaitRefetchQueries
         onCompleted={(data) => {
           this.setState({
             isLoggedIn: data.registerCode.loggedIn,
@@ -57,7 +65,7 @@ class Login extends React.Component {
           }, () => {
             if (this.state.isLoggedIn) {
               this.props.user.login();
-              this.props.user.setUserInfo(this.props.userInfo.user);
+              this.setUserInfo(this.props.userInfo.user);
               const priorPath = localStorage.getItem('preLoginPathname');
               if (priorPath) {
                 if (priorPath !== '/login') {
@@ -97,6 +105,6 @@ class Login extends React.Component {
       </Mutation>
     );
   }
-};
+}
 
 export default withRouter(withUser(graphql(GET_USER_INFO, { name: 'userInfo' })(Login)));
