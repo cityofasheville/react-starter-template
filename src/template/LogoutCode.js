@@ -2,11 +2,7 @@ import React from 'react';
 
 class LogoutCode extends React.Component {
   componentDidMount() {
-    console.log('test', this.props.loggedIn);
-    //if (this.props.loggedIn) {
-    //  console.log('logging out');
-      this.props.logout();
-    //}
+    this.props.logout();
   }
 
   render() {

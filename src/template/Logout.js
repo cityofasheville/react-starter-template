@@ -21,7 +21,7 @@ class Logout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: this.props.user.loggedIn,
+      isLoggedIn: true, // weird to set this true ...
       message: 'No message',
       fail: false,
     };

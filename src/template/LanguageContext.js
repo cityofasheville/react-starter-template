@@ -11,6 +11,7 @@ export default class LanguageProvider extends React.Component {
       this.setState({ language: newLang, label, dropdownOpen });
     },
   }
+
   render() {
     return <LangContext.Provider value={this.state}>{this.props.children}</LangContext.Provider>;
   }
