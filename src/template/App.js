@@ -6,9 +6,9 @@ import { ApolloProvider } from 'react-apollo';
 import client from 'app/AppClient';
 import config from 'app/config';
 import mainRoutes from 'app/mainRoutes';
+import AppTitle from 'template/AppTitle';
 import Footer from 'template/Footer';
 import LanguageProvider from 'template/LanguageContext';
-import AppTitle from 'template/AppTitle';
 import Navbar from 'template/Navbar';
 import 'template/styles/components/App.css';
 

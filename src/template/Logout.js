@@ -5,6 +5,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
+import { GET_USER_INFO } from 'template/Queries';
 import LogoutCode from 'template/LogoutCode';
 import Error from 'template/shared/Error';
 import LoadingAnimation from 'template/shared/LoadingAnimation';
@@ -33,6 +34,9 @@ class Logout extends React.Component {
     return (
       <Mutation
         mutation={LOGOUT_CODE}
+        refetchQueries={() => ([{
+          query: GET_USER_INFO,
+        }])}
         onCompleted={(data) => {
           this.setState({
             isLoggedIn: data.logout.loggedIn,
@@ -42,7 +46,6 @@ class Logout extends React.Component {
             const { isLoggedIn } = this.state;
             const { history } = this.props;
             if (!isLoggedIn) {
-              //TODO: clear the cache of the user info
               localStorage.setItem('loggedIn', false);
               history.push('/');
             }
