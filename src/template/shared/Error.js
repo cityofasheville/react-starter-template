@@ -5,9 +5,10 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import config from 'app/config';
+import 'template/styles/components/Error.css';
 
-const Error = ({ message }) => (
-  <div className="row">
+const Error = ({ message, absolutePosition }) => (
+  <div className={`row${absolutePosition ? ' error-pos-absolute' : ''}`}>
     <div className="col-sm-12">
       <div className="alert alert-danger alert-sm">
         <p>
@@ -48,10 +49,12 @@ const Error = ({ message }) => (
 
 Error.propTypes = {
   message: PropTypes.string,
+  absolutePosition: PropTypes.bool,
 };
 
 Error.defaultProps = {
   message: 'Error message',
+  absolutePosition: false,
 };
 
 export default Error;

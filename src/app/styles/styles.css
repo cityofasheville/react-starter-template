@@ -2,6 +2,11 @@
 This is a file for global css, if needed for your app.
 */
 
+html, body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 h1 {
   /* color: red; */ /*Don't actually make this red... */
 }
