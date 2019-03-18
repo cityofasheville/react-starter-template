@@ -21,6 +21,7 @@ const Footer = () => (
                   className="inText"
                   href={config.feedbackURL}
                   target="_blank"
+                  rel="noopener noreferrer"
                   title="website feedback form"
                 >
                   feedback form
@@ -36,6 +37,7 @@ const Footer = () => (
                 <a
                   href={config.gitHubURL}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   GitHub
                   <span style={{ marginLeft: '2px' }}>

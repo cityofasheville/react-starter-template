@@ -19,6 +19,7 @@ const Error = ({ message }) => (
                 <a
                   href={config.feedbackURL}
                   target="_blank"
+                  rel="noopener noreferrer"
                   style={{ color: '#fff', textDecoration: 'underline' }}
                 >
                   this form
@@ -27,6 +28,9 @@ const Error = ({ message }) => (
               </span>
             )
           }
+          {!config.hasFeedbackForm && (
+            <span>Please report issues to help@ashevillenc.gov.</span>
+          )}
         </p>
         <p>
           Time:&nbsp;
