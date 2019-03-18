@@ -11,6 +11,10 @@ main {
   margin: 2vh 15vw;
 }
 
+.alert-danger {
+  color: red !important;
+}
+
 h1 {
   /* color: red; */ /*Don't actually make this red... */
 }

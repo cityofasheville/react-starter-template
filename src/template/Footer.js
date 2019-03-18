@@ -30,6 +30,11 @@ const Footer = () => (
               </div>
             )
           }
+          {!config.hasFeedbackForm && (
+            <div>
+              We strive for full accessibility. Report issues to help@ashevillenc.gov.
+            </div>
+          )}
           {config.hasGitHubURL
             && (
               <div>
@@ -40,10 +45,10 @@ const Footer = () => (
                   rel="noopener noreferrer"
                 >
                   GitHub
-                  <span style={{ marginLeft: '4px' }}>
+                  <span style={{ marginLeft: '6px' }}>
                     <Icon
                       path={IM_GITHUB}
-                      size={23}
+                      size={21}
                       verticalAlign="bottom"
                     />
                   </span>
