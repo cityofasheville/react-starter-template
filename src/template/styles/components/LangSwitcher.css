@@ -22,7 +22,7 @@
 }
 
 .LangSwitcher-dropdown select:focus {
-  border: 1px solid blue;
+  border: 1px solid #c3ebff;
 }
 
 .LangSwitcher-dropdown option {
