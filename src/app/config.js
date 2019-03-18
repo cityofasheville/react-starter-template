@@ -5,11 +5,11 @@ This file is how you configure the app in relation to the template. Do NOT edit 
 const config = {
   // main configurations
   appTitle: {
-    defaultText: 'A react app',
+    defaultText: 'New React App',
     translations: [
       {
         language: 'en', // use ISO codes
-        text: 'A react app',
+        text: 'New React App',
       },
     ],
   },
