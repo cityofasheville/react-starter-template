@@ -7,6 +7,10 @@ html, body {
   overflow-y: scroll;
 }
 
+main {
+  margin: 2vh 15vw;
+}
+
 h1 {
   /* color: red; */ /*Don't actually make this red... */
 }
