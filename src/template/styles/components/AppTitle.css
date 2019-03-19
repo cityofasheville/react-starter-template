@@ -1,13 +1,17 @@
+.AppTitle-wrapper-link {
+  padding: 0.5rem 0 0 0.5rem;
+}
+
 .AppTitle-logo {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
 }
 
 .AppTitle-title {
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: lighter;
   color: #325d81;
-  margin: 0px;
+  margin: 0;
 }
 
 .AppTitle-title:focus {
@@ -22,9 +26,8 @@
 
 .AppTitle-title-container {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 1rem;
   vertical-align: top;
-  padding-top: 10px;
 }
 
 @media (max-width: 415px) {
@@ -32,11 +35,10 @@
     width: 100%;
   }
   .AppTitle-logo {
-    width: 40px;
-    height: 40px;
-    padding-top: 15px;
+    width: 3rem;
+    height: 3rem;
   }
   .AppTitle-title {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 }
