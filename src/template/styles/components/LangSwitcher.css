@@ -4,6 +4,10 @@
 
 /* See Navbar for other styles affecting this and other nav children */
 
+.LangSwitcher-dropdown {
+  white-space: nowrap;
+}
+
 .LangSwitcher-dropdown select {
   background-color: #f6fcff;
   color: #325d81;
@@ -11,21 +15,27 @@
   font-size: inherit;
   border-radius: 0px;
   width: 100%;
-  margin-right: 0.75em;
 }
 
-.LangSwitcher-dropdown:after {
+.LangSwitcher-arrowAfter {
+  position: relative;
+  height: 0;
+  width: 0;
+  display: inline;
+}
+
+.LangSwitcher-arrowAfter:after {
   content: '';
   width: 0;
   height: 0;
   border-left: 0.35em solid transparent;
   border-right: 0.35em solid transparent;
   border-top: 0.35em solid #325d81;
+  background-color: none;
 
   /*Adjust for position however you want*/
-  right: 1.65em;
-  top: 2.25em;
-  padding: 0 0 2px;
+  right: 0.75em;
+  top: 0.35em;
   position: absolute;
   pointer-events: none;
 }
