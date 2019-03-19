@@ -3,7 +3,7 @@
 *********************************************************************************************** */
 .LangSwitcher-dropdown {
   border: 1px solid transparent;
-  width: 90px;
+  /* width: 90px; */
 }
 
 .LangSwitcher-dropdown select {
@@ -17,7 +17,7 @@
 }
 
 .LangSwitcher-dropdown select:hover {
-  background: #d6dee4;
+  /* background: #d6dee4; */
 }
 
 .LangSwitcher-dropdown select:focus {

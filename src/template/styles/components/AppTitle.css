@@ -28,9 +28,12 @@
 }
 
 @media (max-width: 415px) {
+  .AppTitle-wrapper-link {
+    width: 100%;
+  }
   .AppTitle-logo {
-    width: 60px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     padding-top: 15px;
   }
   .AppTitle-title {
