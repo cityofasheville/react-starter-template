@@ -45,10 +45,10 @@ const Footer = () => (
                   rel="noopener noreferrer"
                 >
                   GitHub
-                  <span style={{ marginLeft: '6px' }}>
+                  <span style={{ marginLeft: '5px' }}>
                     <Icon
                       path={IM_GITHUB}
-                      size={21}
+                      size={19}
                       verticalAlign="bottom"
                     />
                   </span>
