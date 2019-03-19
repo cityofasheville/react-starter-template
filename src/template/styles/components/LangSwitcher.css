@@ -4,15 +4,11 @@
 
 /* See Navbar for other styles affecting this and other nav children */
 
-.LangSwitcher-dropdown {
-  border: 1px solid transparent;
-}
-
 .LangSwitcher-dropdown select {
   background-color: #f6fcff;
   color: #325d81;
   font-weight: inherit;
   font-size: inherit;
-  border: 1px solid transparent;
+  border-radius: 0px;
   width: 100%;
 }
