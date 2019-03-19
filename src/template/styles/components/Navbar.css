@@ -11,7 +11,6 @@
 }
 
 .Navbar-nav ul {
-  height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -19,7 +18,6 @@
 
 .Navbar-nav  li {
   display: inline-block;
-  height: 100%;
   font-size: 1rem;
 }
 
@@ -61,6 +59,24 @@
 .Navbar-nav .Navbar-dropdown-menu {
   display: none;
 }
+
+.Navbar-nav.open .Navbar-dropdown-menu {
+  display: block;
+}
+
+.Navbar-dropdown-toggle[aria-expanded="true"] + .Navbar-dropdown-menu {
+  display: block;
+}
+
+/* So no conflicts with Bootstrap */
+.Navbar-nav a {
+  -webkit-box-sizing: unset;
+  box-sizing: unset;
+}
+
+/* ******************************* */
+/* Hamburger children - for mobile */
+/* ******************************* */
 
 .Navbar-nav.hamburger .LangSwitcher-dropdown {
   float: left;
@@ -107,11 +123,6 @@
   background-color: #f6fcff;
 }
 
-/* .Navbar-nav.hamburger .LangSwitcher-dropdown select {
-  height: 100%;
-  width: 100%;
-} */
-
 .Navbar-nav.hamburger a.active {
   background-color: #99ddff;
 }
@@ -133,18 +144,4 @@
 
 .Navbar-nav.hamburger ul {
   margin-top: 58px;
-}
-
-.Navbar-nav.open .Navbar-dropdown-menu {
-  display: block;
-}
-
-.Navbar-dropdown-toggle[aria-expanded="true"] + .Navbar-dropdown-menu {
-  display: block;
-}
-
-/* So no conflicts with Bootstrap */
-.Navbar-nav a {
-  -webkit-box-sizing: unset;
-  box-sizing: unset;
 }

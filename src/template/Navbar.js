@@ -95,12 +95,11 @@ class Navbar extends React.Component {
                         </a>
                       </li>
                     ) : (
-                      <li>
+                      <li key={item.defaultText}>
                         <Link
                           to={item.href}
                           className={item.active ? 'active' : ''}
                           alt={this.translateMenuItem(item.defaultText)}
-                          key={item.defaultText}
                         >
                           {item.icon ? <Icon path={item.icon} size={24} />
                             : this.translateMenuItem(item.defaultText)}
@@ -150,22 +149,20 @@ class Navbar extends React.Component {
                             rel="noopener noreferrer"
                             className={item.active ? 'active' : ''}
                             alt={this.translateMenuItem(item.defaultText)}
-                            key={item.defaultText}
                           >
                             {item.icon ? <Icon path={item.icon} size={24} />
                               : this.translateMenuItem(item.defaultText)}
                           </a>
+                        ) : (
+                          <Link
+                            to={item.href}
+                            className={item.active ? 'active' : ''}
+                            alt={this.translateMenuItem(item.defaultText)}
+                          >
+                            {item.icon ? <Icon path={item.icon} size={24} />
+                              : this.translateMenuItem(item.defaultText)}
+                          </Link>
                         )
-                          : (
-                            <Link
-                              to={item.href}
-                              className={item.active ? 'active' : ''}
-                              alt={this.translateMenuItem(item.defaultText)}
-                            >
-                              {item.icon ? <Icon path={item.icon} size={24} />
-                                : this.translateMenuItem(item.defaultText)}
-                            </Link>
-                          )
                       }
                     </li>
                   ))
