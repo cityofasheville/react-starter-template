@@ -2,6 +2,19 @@
 This is a file for global css, if needed for your app.
 */
 
+html, body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+main {
+  margin: 2vh 15vw;
+}
+
+.alert-danger {
+  color: red !important;
+}
+
 h1 {
   /* color: red; */ /*Don't actually make this red... */
 }

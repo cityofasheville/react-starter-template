@@ -5,11 +5,11 @@ This file is how you configure the app in relation to the template. Do NOT edit 
 const config = {
   // main configurations
   appTitle: {
-    defaultText: 'A react app',
+    defaultText: 'New React App',
     translations: [
       {
         language: 'en', // use ISO codes
-        text: 'A react app',
+        text: 'New React App',
       },
     ],
   },
@@ -84,8 +84,8 @@ const config = {
     ],
   },
   // footer
-  hasFeedbackForm: true,
-  feedbackURL: 'https://docs.google.com/a/ashevillenc.gov/forms/d/e/1FAIpQLSdjNwOmoDY3PjQOVreeSL07zgI8otIIPWjY7BnejWMAjci8-w/viewform?c=0&w=1', // eslint-disable-line
+  hasFeedbackForm: false,
+  feedbackURL: '', // eslint-disable-line
   hasGitHubURL: true,
   gitHubURL: 'https://github.com/cityofasheville/simplicity2',
 
