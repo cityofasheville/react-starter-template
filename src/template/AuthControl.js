@@ -9,7 +9,6 @@ import { Query } from 'react-apollo';
 import config from 'app/config';
 import { withLanguage } from 'template/LanguageContext';
 import { GET_USER_INFO } from 'template/Queries';
-import Error from 'template/shared/Error';
 
 const saveLocationThenLogin = (location) => {
   localStorage.setItem('preLoginPathname', location.pathname);
