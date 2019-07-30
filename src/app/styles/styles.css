@@ -15,6 +15,10 @@ main {
   color: red !important;
 }
 
+.alert-danger a {
+  color: inherit !important;
+}
+
 h1 {
   /* color: red; */ /*Don't actually make this red... */
 }
