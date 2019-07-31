@@ -85,6 +85,7 @@ const config = {
   },
   // footer
   hasFeedbackForm: false,
+  useFeedbackForErrors: false,
   feedbackURL: '', // eslint-disable-line
   hasGitHubURL: true,
   gitHubURL: 'https://github.com/cityofasheville/simplicity2',

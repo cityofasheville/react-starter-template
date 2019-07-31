@@ -4,6 +4,7 @@ import About from 'app/About';
 import Home from 'app/Home';
 import Login from 'template/Login';
 import Logout from 'template/Logout';
+import FourOhFour from 'template/FourOhFour';
 import 'app/styles/styles.css'; // import your global css here if using
 
 const mainRoutes = (
@@ -12,6 +13,7 @@ const mainRoutes = (
     <Route path="/about" component={About} />
     <Route path="/login" component={Login} />
     <Route path="/logout" component={Logout} />
+    <Route component={FourOhFour} />
   </Switch>
 );
 
