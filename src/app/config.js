@@ -12,6 +12,7 @@ const config = {
         text: 'New React App',
       },
     ],
+    isBeta: true,
   },
   appIntro: {
     defaultText: 'City of Asheville, NC',
