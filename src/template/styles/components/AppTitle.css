@@ -1,6 +1,6 @@
 .AppTitle-wrapper-link {
   padding: 0.5rem 0 0 0.5rem;
-  white-space: nowrap;
+  display: flex;
 }
 
 .AppTitle-logo {
@@ -15,6 +15,7 @@
   margin: 2px;
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .AppTitle-title span {
