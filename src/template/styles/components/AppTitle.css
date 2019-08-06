@@ -1,6 +1,7 @@
 .AppTitle-wrapper-link {
   padding: 0.5rem 0 0 0.5rem;
   display: flex;
+  flex-shrink: 1;
 }
 
 .AppTitle-logo {
@@ -20,6 +21,7 @@
 
 .AppTitle-title span {
   flex: 1 1 auto;
+  padding: 0 0.5rem 0 0;
 }
 
 .AppTitle-title #beta-indicator {
@@ -27,6 +29,7 @@
   background-color: purple;
   color: white;
   border-radius: 8px;
+  text-align: center;
 }
 
 .AppTitle-title:focus {
